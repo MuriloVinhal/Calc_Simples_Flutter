@@ -20,9 +20,10 @@ class CalculadoraState extends State<Calculadora> {
             new Text(
               "Resultado: $soma",
               style: new TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 73, 5, 110)),
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.blueAccent,
+              ),
             ),
             //input do primeiro valor
             new TextField(
@@ -51,33 +52,44 @@ class CalculadoraState extends State<Calculadora> {
                     style: new TextStyle(
                       fontSize: 23,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 136, 9, 158),
+                      color: Colors.white,
                     ),
                   ),
                   color: Colors.blueAccent,
                   onPressed: somar,
                 ),
-              ],
-            ),
-
-            new Padding(padding: const EdgeInsets.only(top: 10)),
-            new Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
                 new MaterialButton(
                   child: new Text(
                     "-",
                     style: new TextStyle(
-                      fontSize: 23,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 136, 9, 158),
-                    ),
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                  color: Colors.blueAccent,
+                  color: Colors.deepPurple,
                   onPressed: subtrair,
                 ),
               ],
             ),
+
+            // new Padding(padding: const EdgeInsets.only(top: 10)),
+            // new Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //   children: <Widget>[
+            //     new MaterialButton(
+            //       child: new Text(
+            //         "-",
+            //         style: new TextStyle(
+            //           fontSize: 23,
+            //           fontWeight: FontWeight.bold,
+            //           color: Color.fromARGB(255, 136, 9, 158),
+            //         ),
+            //       ),
+            //       color: Colors.blueAccent,
+            //       onPressed: subtrair,
+            //     ),
+            //   ],
+            // ),
 
             new Padding(padding: const EdgeInsets.only(top: 10)),
             new Row(
@@ -89,12 +101,24 @@ class CalculadoraState extends State<Calculadora> {
                     style: new TextStyle(
                       fontSize: 23,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 136, 9, 158),
+                      color: Colors.white,
+                    ),
+                  ),
+                  color: Colors.deepPurple,
+                  onPressed: mult,
+                ),
+                new MaterialButton(
+                  child: new Text(
+                    "/",
+                    style: new TextStyle(
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                   color: Colors.blueAccent,
-                  onPressed: mult,
-                )
+                  onPressed: div,
+                ),
               ],
             ),
             new Padding(padding: const EdgeInsets.only(top: 10)),
@@ -159,6 +183,14 @@ class CalculadoraState extends State<Calculadora> {
       t1.text = "";
       t2.text = "";
       soma = 0;
+    });
+  }
+
+  void div() {
+    setState(() {
+      num1 = num.parse(t1.text);
+      num2 = num.parse(t2.text);
+      soma = num1 / num2;
     });
   }
 }
