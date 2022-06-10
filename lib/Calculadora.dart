@@ -132,24 +132,24 @@ class CalculadoraState extends State<Calculadora> {
 //metodos
   void somar() {
     setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
+      num1 = num.parse(t1.text);
+      num2 = num.parse(t2.text);
       soma = num1 + num2;
     });
   }
 
   void subtrair() {
     setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
+      num1 = num.parse(t1.text);
+      num2 = num.parse(t2.text);
       soma = num1 - num2;
     });
   }
 
   void mult() {
     setState(() {
-      num1 = int.parse(t1.text);
-      num2 = int.parse(t2.text);
+      num1 = num.parse(t1.text);
+      num2 = num.parse(t2.text);
       soma = num1 * num2;
     });
   }
