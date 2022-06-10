@@ -122,9 +122,9 @@ class CalculadoraState extends State<Calculadora> {
   }
 
 //Atributos
-  var num1;
-  var num2;
-  var soma = 0;
+  num num1 = 0;
+  num num2 = 0;
+  num soma = 0;
 
   TextEditingController t1 = new TextEditingController(text: "");
   TextEditingController t2 = new TextEditingController(text: "");
